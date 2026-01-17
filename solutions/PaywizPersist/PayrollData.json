@@ -1,0 +1,42 @@
+{
+  "Name": "Acme Corporation",
+  "Id": "12-1234567",
+  "Payables": [
+    {
+      "Id": 1,
+      "Classname": "Employee",
+      "Name": "Hank Hill",
+      "DateOfBirth": "1976-07-04T00:00:00",
+      "HomeAddress": null,
+      "Salary": 125,
+      "YtdSalary": 250,
+      "YtdTax": 19.125,
+      "WorkAddress": null,
+      "PayRate": 0
+    },
+    {
+      "Id": 2,
+      "Classname": "Contractor",
+      "Name": "Dale Gribble",
+      "DateOfBirth": "0001-01-01T00:00:00",
+      "HomeAddress": null,
+      "Salary": 0,
+      "YtdSalary": 0,
+      "YtdTax": 0,
+      "WorkAddress": null,
+      "PayRate": 50
+    },
+    {
+      "Id": 5,
+      "Classname": "Intern",
+      "Name": "Bobby Hill",
+      "DateOfBirth": "0001-01-01T00:00:00",
+      "HomeAddress": null,
+      "Salary": 0,
+      "YtdSalary": 0,
+      "YtdTax": 0,
+      "WorkAddress": null,
+      "PayRate": 0
+    }
+  ]
+}
