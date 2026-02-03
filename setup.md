@@ -8,10 +8,10 @@ This guide provides instructions for setting up your C# development environment 
 
 Before proceeding, ensure you have:
 
-- **Windows 10/11**, **macOS 10.15+**, or **Linux** (Ubuntu 18.04+, Fedora, Debian, etc.)
+- **Windows 11**, **Windows 10 (22H2)**, **macOS 12+**, or **Linux** (Ubuntu 22.04+, Fedora 38+, Debian 12+, etc.)
 - Administrator or sudo access to install software
-- Internet connection for downloading tools
-- At least 2 GB of free disk space (more for Visual Studio)
+- Stable internet connection for downloading tools
+- At least 4 GB of free disk space (8+ GB recommended for Visual Studio)
 
 ---
 
@@ -21,9 +21,9 @@ Before proceeding, ensure you have:
 - **Windows 10/11** (Home, Pro, Enterprise editions)
 
 ### Prerequisites
-- Windows 10 version 1909+ or Windows 11
-- 4 GB RAM minimum (8 GB recommended)
-- 6-8 GB free disk space
+- Windows 11 or Windows 10 (version 22H2)
+- 8 GB RAM minimum (16 GB recommended for smooth multitasking)
+- 8-10 GB free disk space
 
 ### Installation
 
@@ -55,7 +55,7 @@ Open **Command Prompt** or **PowerShell** and run:
 dotnet --version
 ```
 
-Expected output: `8.0.x` or higher (where x is any number)
+Expected output: `10.0.x` or higher (where x is any number)
 
 Also verify the C# compiler:
 ```powershell
@@ -86,14 +86,14 @@ To remove all Visual Studio components:
 ## Option 2: VS Code (Windows, macOS, Linux)
 
 ### Supported Platforms
-- **Windows 7/8/10/11** (32-bit or 64-bit)
-- **macOS 10.15+** (Intel or Apple Silicon)
-- **Linux**: Ubuntu, Debian, Fedora, Arch, RHEL, CentOS, openSUSE, SLE, and others
+- **Windows 11** or **Windows 10 (22H2)** (64-bit)
+- **macOS 12+** (Intel or Apple Silicon)
+- **Linux**: Ubuntu 22.04+, Debian 12+, Fedora 38+, Arch, RHEL 9+, openSUSE 15+, and others
 
 ### Prerequisites
-- 256 MB RAM minimum (1 GB recommended)
-- 500 MB free disk space
-- .NET SDK 8.0 or later (installed separately)
+- 512 MB RAM minimum (2 GB recommended)
+- 1 GB free disk space (plus .NET SDK installation)
+- .NET SDK 10.0 or later (installed separately)
 
 ### Installation
 
@@ -101,35 +101,37 @@ To remove all Visual Studio components:
 
 **Windows (Command Prompt/PowerShell):**
 ```powershell
-# Visit https://dotnet.microsoft.com/download
-# Download .NET 8.0 SDK installer for Windows
+# Visit https://dotnet.microsoft.com/download/dotnet/10.0
+# Download .NET 10.0 SDK installer for Windows (x64)
 # Run the installer and follow the prompts
+# Or use Windows Package Manager:
+winget install Microsoft.DotNet.SDK.10
 ```
 
 **macOS (Terminal):**
 ```bash
 # Using Homebrew (recommended)
-brew install dotnet-sdk
+brew install dotnet-sdk@10
 
-# Or download from https://dotnet.microsoft.com/download
+# Or download from https://dotnet.microsoft.com/download/dotnet/10.0
 # and run the .pkg installer
 ```
 
-**Linux (Ubuntu/Debian):**
+**Linux (Ubuntu 22.04+/Debian 12+):**
 ```bash
 # Add Microsoft package repository
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 chmod +x dotnet-install.sh
 ./dotnet-install.sh --version latest
 
-# Or using apt (Ubuntu 22.04+)
+# Or using apt
 sudo apt-get update
-sudo apt-get install -y dotnet-sdk-8.0
+sudo apt-get install -y dotnet-sdk-10.0
 ```
 
-**Linux (Fedora/RHEL):**
+**Linux (Fedora 38+/RHEL 9+):**
 ```bash
-sudo dnf install dotnet-sdk-8.0
+sudo dnf install dotnet-sdk-10.0
 ```
 
 #### Step 2: Install VS Code
@@ -160,13 +162,13 @@ sudo dnf install code
 sudo pacman -S code
 ```
 
-#### Step 3: Install C# Extension
+#### Step 3: Install C# Extensions
 
 1. Open **VS Code**
 2. Click the **Extensions** icon on the left sidebar (or press `Ctrl+Shift+X` / `Cmd+Shift+X`)
-3. Search for **"C# Dev Kit"**
-4. Click **"Install"** on the Microsoft C# extension
-5. Also install **"C# Extensions"** by kreativ (optional, but helpful)
+3. Search for **"C# Dev Kit"** (official Microsoft extension)
+4. Click **"Install"** to install the C# Dev Kit (includes Intellisense, debugging, and testing)
+5. Also install **"Pylance"** or **"IntelliCode"** for enhanced AI-assisted coding (optional)
 6. Restart VS Code when prompted
 
 ### Verification
@@ -285,11 +287,12 @@ source ~/.zshrc  # or ~/.bashrc
 |---------|---------------|---------|
 | **Cost** | Free (Community), Paid (Pro/Enterprise) | Free |
 | **Platform** | Windows, macOS | Windows, macOS, Linux |
-| **Memory Usage** | Higher (~8GB) | Lower (~200MB) |
+| **Memory Usage** | Higher (~10GB) | Lower (~500MB) |
 | **Setup Time** | 20-30 minutes | 5-10 minutes |
-| **Built-in Tools** | Debugger, Profiler, Designer | Extensions needed |
+| **Built-in Tools** | Debugger, Profiler, Designer, Git integration | Extensions needed |
 | **Learning Curve** | Steeper (more features) | Gentler (lightweight) |
-| **Project Size** | Best for large projects | Good for all sizes |
+| **Best For** | Enterprise/large projects | Students, individuals, quick prototyping |
+| **2026 Status** | Fully updated with .NET 10 | Fully updated with .NET 10 |
 
 ---
 
@@ -308,5 +311,22 @@ After completing setup:
 1. Review the course [Readme.md](./Readme.md)
 2. Start with the **VisualStudio** lab in `labs/VisualStudio/Readme.md`
 3. Follow the lab sequence as outlined in the course materials
+
+## 2026 Updates & Student Success Tips
+
+### What's New in .NET 10
+- **Enhanced Performance**: Improved runtime speed and memory efficiency
+- **C# 14 Features**: Latest language features for modern development
+- **AI Integration**: Better tooling for AI/ML workloads
+- **Security**: Updated security libraries and protocols
+
+### For Student Success
+- **Use Source Control**: Initialize a Git repository in your projects (`git init`)
+- **Install GitHub Desktop**: Consider [GitHub Desktop](https://desktop.github.com/) for easier version control
+- **Backup Your Work**: Use GitHub, OneDrive, or another cloud service regularly
+- **Ask for Help**: Use the course forums and attend office hours
+- **Test Early**: Run your code frequently to catch errors early
+- **Read Error Messages**: .NET 10 provides detailed error messages—read them carefully!
+
 
 **Happy coding!** 🚀
